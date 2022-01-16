@@ -1,4 +1,29 @@
 {
   "home": "Welcome to Instagram!",
-  "interpolation": "Changed language already {{something}} times"
+  "interpolation": "Changed language already {{something}} times",
+  "login": {
+    "button": "Login",
+    "or": "or",
+    "facebook": "Login with facebook",
+    "password": "Have you forgotten the password?",
+    "apple-store": "../../appstore-en.png",
+    "playstore": "../../playstore-en.png",
+    "fields": {
+      "username": "Username",
+      "password": "Password",
+      "usernameError": "Username should have at least 4 characters and a maximum of 15",
+      "passwordError": "Password should have at least one capital letter and a special symbol"
+    },
+    "download-app": "Download app"
+  },
+  "auth": {
+    "text-register": "You don't have an account?",
+    "register": "Register",
+    "text-login": "Do you have an account?",
+    "login": "Login"
+  },
+  "UI": {
+    "show": "Show",
+    "hide": "Hide"
+  }
 }

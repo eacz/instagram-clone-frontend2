@@ -8,6 +8,7 @@ declare module "styled-components" {
     background: string;
     primaryColor: string;
     fontColor:  string;
+    backgroundContrast: string;
     //secondaryColor: string;
     //backgroundContrast: string;
   }
@@ -18,6 +19,7 @@ export const lightTheme : DefaultTheme = {
   background: '#ffffff',
   primaryColor: '#0095f6',
   fontColor: '#262626',
+  backgroundContrast: '#dbdbdb'
 }
 
 export const darkTheme : DefaultTheme = {
@@ -25,4 +27,5 @@ export const darkTheme : DefaultTheme = {
   background: '#1f1f1f',
   primaryColor: '#0095f6',
   fontColor: '#ffffff',
+  backgroundContrast: '#dbdbdb'
 }

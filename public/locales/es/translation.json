@@ -1,4 +1,29 @@
 {
   "home": "Bienvenido a Instagram!",
-  "interpolation": "Interpolacion. {{something}}"
+  "interpolation": "Interpolacion. {{something}}",
+  "login": {
+    "button": "Iniciar sesión",
+    "or": "o",
+    "facebook": "Inicia sesión con Facebook",
+    "password": "¿Has olvidado la contraseña?",
+    "apple-store": "../../appstore-es.png",
+    "playstore": "../../playstore-es.png",
+    "fields": {
+      "username": "Nombre de usuario",
+      "password": "Contraseña",
+      "usernameError": "El nombre de usuario debe tener al menos 4 caracters y un máximo de 15",
+      "passwordError": "La contraseña debe tener al menos una letra mayúscula y un símbolo especial"
+    },
+    "download-app": "Descarga la aplicación"
+  },
+  "auth": {
+    "text-register": "¿No tienes cuenta?",
+    "register": "Regístrate",
+    "text-login": "¿Tienes una cuenta?",
+    "login": "Entrar"
+  },
+  "UI": {
+    "show": "Mostrar",
+    "hide": "Ocultar"
+  }
 }

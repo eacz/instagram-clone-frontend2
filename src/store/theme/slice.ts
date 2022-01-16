@@ -12,7 +12,7 @@ export const themeSlice = createSlice({
   initialState,
   reducers: {
     setLightTheme: state => {
-      state.currentTheme= lightTheme 
+      state.currentTheme = lightTheme 
     },
     setDarkTheme: state => {
       state.currentTheme = darkTheme

@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     background: ${({theme}) => theme.background};
   }
-  h1,h2,h3,h4,h5,h6, p {
+  h1,h2,h3,h4,h5,h6, p, a {
     color: ${({theme}) => theme.fontColor};
     font-family: 'Roboto'
   }
