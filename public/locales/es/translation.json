@@ -11,16 +11,32 @@
     "fields": {
       "username": "Nombre de usuario",
       "password": "Contraseña",
-      "usernameError": "El nombre de usuario debe tener al menos 4 caracters y un máximo de 15",
+      "usernameError": "El nombre de usuario debe tener al menos 4 caracteres y un máximo de 15",
       "passwordError": "La contraseña debe tener al menos una letra mayúscula y un símbolo especial"
     },
     "download-app": "Descarga la aplicación"
+  },
+  "register": {
+    "button": "Registrarte",
+    "subtitle": "Regístrate para ver fotos y vídeos de tus amigos.",
+    "facebook-button": "Iniciar sesión con Facebook",
+    "fields": {
+      "email": "Correo electrónico",
+      "name": "Nombre Completo",
+      "username": "Nombre de usuario",
+      "password": "Contraseña",
+      "emailError": "Email inválido",
+      "nameError": "El nombre debe tener al menos 3 caracteres y un máximo de 40",
+      "usernameError": "El nombre de usuario debe tener al menos 4 caracters y un máximo de 15",
+      "passwordError": "La contraseña debe tener al menos una letra mayúscula y un símbolo especial"
+    }
   },
   "auth": {
     "text-register": "¿No tienes cuenta?",
     "register": "Regístrate",
     "text-login": "¿Tienes una cuenta?",
-    "login": "Entrar"
+    "login": "Entrar",
+    "or": "o"
   },
   "UI": {
     "show": "Mostrar",

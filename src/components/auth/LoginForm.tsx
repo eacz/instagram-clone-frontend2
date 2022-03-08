@@ -1,17 +1,9 @@
 import * as Yup from 'yup'
-import styled from 'styled-components'
-import { Form, Formik } from 'formik'
+import { Formik } from 'formik'
 import { useTranslation } from 'react-i18next'
 import { Input, PasswordInput } from '../../components/forms'
 import { Button } from '../../components/common'
-
-const Wrapper = styled(Form)`
-  display: flex;
-  flex-direction: column;
-  max-width: 300px;
-  width: 100%;
-  gap: .5rem;
-`
+import { Form } from './';
 
 interface LoginFields {
   username: string,
@@ -31,12 +23,13 @@ const LoginForm = () => {
       onSubmit={handleSubmit}
       validationSchema={
         Yup.object({
-          username: Yup.string().max(15, t('login.fields.usernameError')).min(4, t('login.fields.usernameError'))
+          username: Yup.string().max(15, t('login.fields.usernameError')).min(4, t('login.fields.usernameError')),
+          password: Yup.string().matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)
         })
       }
     >
       {({ values }) => (
-        <Wrapper>
+        <Form>
           <Input placeholder={t('login.fields.username')} name='username' />
           <PasswordInput showHide={!!values.password} placeholder={t('login.fields.password')} name='password' />
           <Button 
@@ -45,7 +38,7 @@ const LoginForm = () => {
           >
               {t('login.button')}
           </Button>
-        </Wrapper>
+        </Form>
       )}
     </Formik>
   )

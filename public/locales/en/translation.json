@@ -3,7 +3,6 @@
   "interpolation": "Changed language already {{something}} times",
   "login": {
     "button": "Login",
-    "or": "or",
     "facebook": "Login with facebook",
     "password": "Have you forgotten the password?",
     "apple-store": "../../appstore-en.png",
@@ -16,11 +15,23 @@
     },
     "download-app": "Download app"
   },
+  "register": {
+    "button": "Register",
+    "subtitle": "Register to see your friends's photos and videos.",
+    "facebook-button": "Sign in with Facebook",
+    "fields": {
+      "email": "Email",
+      "name": "Complete name",
+      "username": "Username",
+      "password": "Password"
+    }
+  },
   "auth": {
     "text-register": "You don't have an account?",
     "register": "Register",
     "text-login": "Do you have an account?",
-    "login": "Login"
+    "login": "Login",
+    "or": "or"
   },
   "UI": {
     "show": "Show",

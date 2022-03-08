@@ -6,7 +6,8 @@ interface Props {
   name: string,
   type?: 'text' | 'email' | 'password',
   placeholder?: string,
-  [x:string]: any
+  [x:string]: any,
+  error?: boolean
 }
 
 const StyledInput = styled.input<{value: any}>`
@@ -18,7 +19,7 @@ const StyledInput = styled.input<{value: any}>`
   outline: 0;
 `
 
-const Input = ({label, ...props} : Props) => {
+const Input = ({label, error = true, ...props} : Props) => {
   const [field, meta] = useField(props)
   return (
     <>
@@ -27,7 +28,7 @@ const Input = ({label, ...props} : Props) => {
         {...field} {...props} 
         value={meta.value} 
       />
-      <ErrorMessage  name={props.name} component="span" />
+      {error && <ErrorMessage  name={props.name} component="span" />}
     </>
   )
 }

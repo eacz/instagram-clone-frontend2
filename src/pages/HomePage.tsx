@@ -2,6 +2,7 @@ import { setDarkTheme, setLightTheme } from '../store/theme/slice'
 import { useAppDispatch } from '../hooks/index'
 import { useTranslation } from 'react-i18next'
 import { lngs } from '../config/i18n'
+import { Link } from 'react-router-dom'
 
 const HomePage = () => {
   const dispatch = useAppDispatch()
@@ -24,6 +25,8 @@ const HomePage = () => {
       <button onClick={() => dispatch(setDarkTheme())}>Dark</button>
       <p>{t('interpolation', {something: 'this is an interpolation example'})}</p>
       <p>{t('interpolation', {something: 'same as above'})}</p>
+      <Link to="/accounts/register">Register</Link>
+      <Link to="/accounts/login">Login</Link>
     </div>
   )
 }

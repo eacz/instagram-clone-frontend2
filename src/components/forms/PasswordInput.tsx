@@ -2,6 +2,7 @@ import { FC, InputHTMLAttributes, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { Input } from '.'
+import { ErrorMessage } from 'formik';
 
 const PasswordInputWrapper = styled.div`
   display: flex;
@@ -37,7 +38,8 @@ const ToggleButton = styled.div`
 `
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
-  showHide?: boolean
+  showHide?: boolean,
+  error?: boolean
 }
 const PasswordInput: FC<Props> = (props) => {
   const [showPassword, setShowPassword] = useState(false)
@@ -46,13 +48,14 @@ const PasswordInput: FC<Props> = (props) => {
   return (
     <>
       <PasswordInputWrapper>
-        <PasswordInputStyled type={showPassword ? 'text' : 'password'} {...props} />
+        <PasswordInputStyled error={false} type={showPassword ? 'text' : 'password'} {...props} />
         {props.showHide && (
           <ToggleButton onClick={() => setShowPassword((s) => !s)}>
             {showPassword ? t('UI.hide') : t('UI.show')}
           </ToggleButton>
         )}
       </PasswordInputWrapper>
+      {/*{props.error && <ErrorMessage  name={props.name} component="span" />}*/}
     </>
   )
 }
