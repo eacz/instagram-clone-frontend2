@@ -3,6 +3,7 @@ import HomePage from '../pages/HomePage'
 import RegisterPage from '../pages/Auth/RegisterPage'
 import LoginPage from '../pages/Auth/LoginPage'
 import RequireAuth from './RequireAuth';
+import PublicRoute from './PublicRoute';
 
 const AppRouter = () => {
   return (
@@ -13,8 +14,12 @@ const AppRouter = () => {
           element={ <RequireAuth Component={HomePage} /> }
         />
         <Route path='accounts'>
-          <Route path='register' element={<RegisterPage />} />
-          <Route path='login' element={<LoginPage />} />
+          <Route path='register' 
+            element={ <PublicRoute Component={RegisterPage} />}
+             />
+          <Route path='login' 
+            element={ <PublicRoute Component={LoginPage} />} 
+            />
         </Route>
       </Routes>
     </BrowserRouter>

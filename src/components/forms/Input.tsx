@@ -10,6 +10,18 @@ interface Props {
   error?: boolean
 }
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  label {
+    color: ${p => p.theme.fontColor}
+  }
+  span {
+    color: ${p => p.theme.error}
+  }
+`
+
 const StyledInput = styled.input<{value: any}>`
   padding: .5rem;
   background: ${({ theme }) => theme.background};
@@ -22,14 +34,14 @@ const StyledInput = styled.input<{value: any}>`
 const Input = ({label, error = true, ...props} : Props) => {
   const [field, meta] = useField(props)
   return (
-    <>
+    <Wrapper>
       {label && <label htmlFor={props.id || props.name}>{label}</label>}
       <StyledInput
         {...field} {...props} 
         value={meta.value} 
       />
       {error && <ErrorMessage  name={props.name} component="span" />}
-    </>
+    </Wrapper>
   )
 }
 

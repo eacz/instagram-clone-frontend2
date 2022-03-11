@@ -2,7 +2,6 @@ import { FC, InputHTMLAttributes, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { Input } from '.'
-import { ErrorMessage } from 'formik';
 
 const PasswordInputWrapper = styled.div`
   display: flex;
@@ -28,7 +27,7 @@ const ToggleButton = styled.div`
   box-sizing: border-box;
   font-size: 0.9em;
   display: flex;
-  padding: 8px;
+  padding: 6px;
   border-left: 0;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;

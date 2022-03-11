@@ -7,6 +7,7 @@ const AuthWrapper = styled.div`
     margin-top: 1rem;
     font-size: 3rem;
   }
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,6 +50,11 @@ const AuthWrapper = styled.div`
     .content {
       border: none;
     }
+  }
+
+  .error {
+    color: #ff3749;
+    font-size: .9rem;
   }
 `
 export default AuthWrapper

@@ -3,6 +3,7 @@ import { useAppDispatch } from '../hooks/index'
 import { useTranslation } from 'react-i18next'
 import { lngs } from '../config/i18n'
 import { Link } from 'react-router-dom'
+import { logout } from '../store/auth/slice'
 
 const HomePage = () => {
   const dispatch = useAppDispatch()
@@ -27,6 +28,7 @@ const HomePage = () => {
       <p>{t('interpolation', {something: 'same as above'})}</p>
       <Link to="/accounts/register">Register</Link>
       <Link to="/accounts/login">Login</Link>
+      <button onClick={() => dispatch(logout())} >logout</button>
     </div>
   )
 }

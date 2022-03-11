@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next'
 import { Input, PasswordInput } from '../../components/forms'
 import { Button } from '../../components/common'
 import { Form } from './';
+import { useAppDispatch, useAppSelector } from '../../hooks/index';
+import { login } from '../../store/auth/slice'
 
 interface LoginFields {
   username: string,
@@ -12,14 +14,16 @@ interface LoginFields {
 
 const LoginForm = () => {
   const { t } = useTranslation()
-
+  const loading = useAppSelector(s => s.auth.loading)
+  const dispatch = useAppDispatch()
+  
   const handleSubmit = (values: LoginFields) => {
-    console.log(values);
+    dispatch(login(values))  
   }
 
   return (
     <Formik 
-      initialValues={{ username: '', password: '' }} 
+      initialValues={{ username: 'eacz', password: '123456aD' }} 
       onSubmit={handleSubmit}
       validationSchema={
         Yup.object({
@@ -33,8 +37,9 @@ const LoginForm = () => {
           <Input placeholder={t('login.fields.username')} name='username' />
           <PasswordInput showHide={!!values.password} placeholder={t('login.fields.password')} name='password' />
           <Button 
-            disabled={!values.password || !values.username}
+            disabled={!values.password || !values.username || loading}
             style={{marginTop: '.5rem'}}
+            type='submit'
           >
               {t('login.button')}
           </Button>
