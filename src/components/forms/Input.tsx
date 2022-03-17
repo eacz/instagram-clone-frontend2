@@ -7,7 +7,8 @@ interface Props {
   type?: 'text' | 'email' | 'password',
   placeholder?: string,
   [x:string]: any,
-  error?: boolean
+  error?: boolean,
+  showError?: boolean
 }
 
 const Wrapper = styled.div`
@@ -29,6 +30,10 @@ const StyledInput = styled.input<{value: any}>`
   border: 1px solid ${({ theme }) => theme.backgroundContrast};
   border-radius: 2px;
   outline: 0;
+  :-internal-autofill-selected {
+    background-color: ${p => p.theme.background} !important;
+    color: ${p => p.theme.fontColor} !important;
+  }
 `
 
 const Input = ({label, error = true, ...props} : Props) => {
@@ -40,7 +45,7 @@ const Input = ({label, error = true, ...props} : Props) => {
         {...field} {...props} 
         value={meta.value} 
       />
-      {error && <ErrorMessage  name={props.name} component="span" />}
+      {error && <ErrorMessage name={props.name} component="span" />}
     </Wrapper>
   )
 }

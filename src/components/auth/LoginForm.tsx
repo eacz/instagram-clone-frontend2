@@ -23,7 +23,7 @@ const LoginForm = () => {
 
   return (
     <Formik 
-      initialValues={{ username: 'eacz', password: '123456aD' }} 
+      initialValues={{ username: '', password: '' }} 
       onSubmit={handleSubmit}
       validationSchema={
         Yup.object({

@@ -1,7 +1,8 @@
-import { FC, InputHTMLAttributes, useState } from 'react'
+import { InputHTMLAttributes, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { Input } from '.'
+import { ErrorMessage } from 'formik'
 
 const PasswordInputWrapper = styled.div`
   display: flex;
@@ -10,14 +11,11 @@ const PasswordInputWrapper = styled.div`
   }
 `
 
-const PasswordInputStyled = styled(Input).attrs(() => ({
-  //placeholder: 'Password'//TODO: checkout why this doesn't work XD
-}))`
+const PasswordInputStyled = styled(Input)`
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   background: ${({ theme }) => theme.background};
   border: 1px solid ${({ theme }) => theme.backgroundContrast};
-  width: 100%;
 `
 
 const ToggleButton = styled.div`
@@ -36,16 +34,23 @@ const ToggleButton = styled.div`
   user-select: none;
 `
 
+const Wrapper = styled.div`
+  span {
+    color: ${p => p.theme.error};
+  }
+`
+
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
-  showHide?: boolean,
+  showHide?: boolean
   error?: boolean
 }
-const PasswordInput: FC<Props> = (props) => {
+
+const PasswordInput = (props: Props) => {
   const [showPassword, setShowPassword] = useState(false)
   const { t } = useTranslation()
 
   return (
-    <>
+    <Wrapper>
       <PasswordInputWrapper>
         <PasswordInputStyled error={false} type={showPassword ? 'text' : 'password'} {...props} />
         {props.showHide && (
@@ -54,8 +59,8 @@ const PasswordInput: FC<Props> = (props) => {
           </ToggleButton>
         )}
       </PasswordInputWrapper>
-      {/*{props.error && <ErrorMessage  name={props.name} component="span" />}*/}
-    </>
+      <ErrorMessage name={props.name || 'password'} className='' component='span' />
+    </Wrapper>
   )
 }
 
