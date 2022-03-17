@@ -10,8 +10,8 @@
     "fields": {
       "username": "Username",
       "password": "Password",
-      "usernameError": "Username should have at least 4 characters and a maximum of 15",
-      "passwordError": "Password should have at least one capital letter and a special symbol"
+      "usernameError": "Username required",
+      "passwordError": "Password required"
     },
     "download-app": "Download app"
   },

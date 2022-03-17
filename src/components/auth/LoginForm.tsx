@@ -28,7 +28,7 @@ const LoginForm = () => {
       validationSchema={
         Yup.object({
           username: Yup.string().max(15, t('login.fields.usernameError')).min(4, t('login.fields.usernameError')),
-          password: Yup.string().matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)
+          password: Yup.string().required(t('login.fields.passwordError'))
         })
       }
     >

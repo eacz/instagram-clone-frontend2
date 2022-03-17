@@ -11,8 +11,8 @@
     "fields": {
       "username": "Nombre de usuario",
       "password": "Contraseña",
-      "usernameError": "El nombre de usuario debe tener al menos 4 caracteres y un máximo de 15",
-      "passwordError": "La contraseña debe tener al menos una letra mayúscula y un símbolo especial"
+      "usernameError": "El nombre de usuario es obligatorio",
+      "passwordError": "La contraseña es obligatorio"
     },
     "download-app": "Descarga la aplicación"
   },
