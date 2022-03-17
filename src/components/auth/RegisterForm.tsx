@@ -3,7 +3,7 @@ import { Formik } from 'formik'
 import { Input, PasswordInput }  from '../forms'
 import { useTranslation } from 'react-i18next';
 import { Form } from '../auth/'
-import Button from '../common/Button';
+import { Button } from '../common';
 import { login, setError, setLoading } from '../../store/auth/slice';
 import axiosInstance from '../../shared/axiosInstance';
 import { useAppDispatch, useAppSelector } from '../../hooks/index';

@@ -1,3 +1,4 @@
 import Button from "./Button";
+import Divider from './Divider';
 
-export { Button }
+export { Button, Divider }
