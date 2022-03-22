@@ -1,8 +1,8 @@
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { authState } from './types'
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import authApi, { loginBody, signupBody } from './api'
 import { loginResponse } from '../../interfaces/responses'
-import { setItem, deleteItem, setHeader, deleteHeader } from '../../helpers'
+import { deleteItem, deleteHeader } from '../../helpers'
+import { checkToken, login, tokenKeyName } from './actions'
 
 const initialState: authState = {
   auth: false,
@@ -12,37 +12,6 @@ const initialState: authState = {
   token: '',
   error: '',
 }
-
-const tokenKeyName = 'token-ig'
-
-//TODO: move all asyncs thunks to a separated file
-export const signup = createAsyncThunk('auth/signup', async (signupBody: signupBody) => {
-  const res = await authApi.signup(signupBody)
-  return res
-})
-
-export const login = createAsyncThunk('auth/login', async (loginBody: loginBody, { rejectWithValue }) => {
-  try {
-    const res = await authApi.login(loginBody)
-    setItem(tokenKeyName, res.token)
-    setHeader(tokenKeyName, res.token)
-    return res
-  } catch (error: any) {
-    if(!error.response){
-      throw error
-    }
-    return rejectWithValue(error.response.data)
-  }
-})
-
-export const checkToken = createAsyncThunk('auth/checkToken', async (_, { rejectWithValue }) => {
-  try {
-    const res = await authApi.checkToken()
-    return res;
-  } catch (error: any) {
-    return rejectWithValue(error.response.data)
-  }
-})
 
 export const authSlice = createSlice({
   name: 'auth',
@@ -94,5 +63,6 @@ export const authSlice = createSlice({
 })
 
 export const { setLoading, logout, setError } = authSlice.actions
+export { checkToken, login, tokenKeyName }
 
 export default authSlice.reducer
