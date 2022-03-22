@@ -1,9 +1,9 @@
+import { Suspense, useEffect } from 'react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import { RootState } from './store/index'
 import { AppRouter } from './routers'
-import { useAppSelector } from './hooks/index'
-import { Suspense } from 'react'
+import { useAppSelector, useAppDispatch } from './hooks/index';
 import { LoadingPage } from './pages'
+import { checkToken } from './store/auth/slice';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -17,7 +17,16 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const App = () => {
-  const { currentTheme } = useAppSelector((state: RootState) => state.theme)
+  const { currentTheme } = useAppSelector(state => state.theme)
+  const dispatch = useAppDispatch()
+  const checking = useAppSelector(state => state.auth.checking)
+  
+  //check if there is a token and if its valid for the current session
+  useEffect(() => {
+    dispatch(checkToken())
+  }, [dispatch])
+  
+  if(checking) return <LoadingPage />
   return (
     <Suspense fallback={<LoadingPage />}>
       <ThemeProvider theme={currentTheme}>

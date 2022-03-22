@@ -1,4 +1,6 @@
 import axiosInstance from '../../shared/axiosInstance'
+import { loginResponse } from '../../interfaces/responses';
+import { getItem } from '../../helpers';
 
 export interface signupBody {
   username: string
@@ -23,12 +25,22 @@ const authApi = {
   },
   async login(body: loginBody) {
     try {
-      const res = await axiosInstance.post('/auth/login', body)
+      const res = await axiosInstance.post<loginResponse>('/auth/login', body)
       return res.data
     } catch (error) {
       throw error
     }
   },
+  async checkToken(){
+    const token = getItem('token-ig')
+    try {
+      if(!token) throw new Error('invalid token')
+      const res = await axiosInstance.post<loginResponse>('/auth/renew-token', {token})
+      return res.data
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 export default authApi
