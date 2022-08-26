@@ -40,5 +40,14 @@
   "UI": {
     "show": "Show",
     "hide": "Hide"
+  },
+  "post": {
+    "like": "Like",
+    "likes": "Likes",
+    "comment": {
+      "add": "Add a comment",
+      "post": "Post",
+      "more-comments": "View all {{commentsNumber}} comments"
+    }
   }
 }

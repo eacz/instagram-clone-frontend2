@@ -41,5 +41,14 @@
   "UI": {
     "show": "Mostrar",
     "hide": "Ocultar"
+  },
+  "post": {
+    "like": "Me gusta",
+    "likes": "Me gusta",
+    "comment": {
+      "add": "Añade un comentario",
+      "post": "Publicar",
+      "more-comments": "Ver los {{commentsNumber}} comentarios"
+    }
   }
 }
