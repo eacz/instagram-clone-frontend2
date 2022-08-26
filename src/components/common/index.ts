@@ -1,4 +1,3 @@
-import Button from "./Button";
-import Divider from './Divider';
-
-export { Button, Divider }
+export { default as Button } from './Button'
+export { default as Divider } from './Divider'
+export { default as TextButton } from './TextButton'
