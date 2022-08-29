@@ -8,6 +8,7 @@ declare module 'styled-components' {
     background: string
     primaryColor: string
     fontColor: string
+    disabledFontColor: string
     backgroundContrast: string
     error: string
     globalParagraphSize: string
@@ -21,17 +22,19 @@ export const lightTheme: DefaultTheme = {
   background: '#ffffff',
   primaryColor: '#0095f6',
   fontColor: '#262626',
+  disabledFontColor: '#b3dffc',
   backgroundContrast: '#dbdbdb',
   error: '#ff3749',
-  globalParagraphSize: '14px'
+  globalParagraphSize: '14px',
 }
 
 export const darkTheme: DefaultTheme = {
   type: 'dark',
   background: '#1f1f1f',
   primaryColor: '#0095f6',
+  disabledFontColor: '#b3dffc',
   fontColor: '#ffffff',
   backgroundContrast: '#dbdbdb',
   error: '#ff3749',
-  globalParagraphSize: '14px'
+  globalParagraphSize: '14px',
 }

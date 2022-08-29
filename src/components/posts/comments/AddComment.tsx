@@ -3,9 +3,8 @@ import styled, { useTheme } from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSmile } from '@fortawesome/free-regular-svg-icons'
 import { Formik } from 'formik'
-import CommentInput from './CommentInput'
+import { CommentForm, CommentInput } from '.'
 import { TextButton } from '../../common'
-import CommentForm from './CommentForm'
 
 const Container = styled.section`
   border-top: 1px solid ${({ theme }) => theme.backgroundContrast};
@@ -38,7 +37,7 @@ const AddComment = () => {
           <CommentForm>
             {/* TODO: check if i should change this input for a textarea */}
             <CommentInput name='comment' placeholder={t('post.comment.add')} />
-            <TextButton type='submit'>{t('post.comment.post')}</TextButton>
+            <TextButton type='submit' disabled={!values.comment}>{t('post.comment.post')}</TextButton>
           </CommentForm>
         )}
       </Formik>
