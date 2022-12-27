@@ -12,6 +12,7 @@ declare module 'styled-components' {
     backgroundContrast: string
     error: string
     globalParagraphSize: string
+    breakpointMobile: number
     //secondaryColor: string;
     //backgroundContrast: string;
   }
@@ -26,6 +27,7 @@ export const lightTheme: DefaultTheme = {
   backgroundContrast: '#dbdbdb',
   error: '#ff3749',
   globalParagraphSize: '14px',
+  breakpointMobile: 680,
 }
 
 export const darkTheme: DefaultTheme = {
@@ -37,4 +39,5 @@ export const darkTheme: DefaultTheme = {
   backgroundContrast: '#dbdbdb',
   error: '#ff3749',
   globalParagraphSize: '14px',
+  breakpointMobile: 680,
 }
