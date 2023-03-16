@@ -1,0 +1,53 @@
+{
+  "home": "Welcome to Instagram!",
+  "interpolation": "Changed language already {{something}} times",
+  "login": {
+    "button": "Login",
+    "facebook": "Login with facebook",
+    "password": "Have you forgotten the password?",
+    "apple-store": "../../appstore-en.png",
+    "playstore": "../../playstore-en.png",
+    "fields": {
+      "username": "Username",
+      "password": "Password",
+      "usernameError": "Username required",
+      "passwordError": "Password required"
+    },
+    "download-app": "Download app"
+  },
+  "register": {
+    "button": "Register",
+    "subtitle": "Register to see your friends's photos and videos.",
+    "facebook-button": "Sign in with Facebook",
+    "fields": {
+      "email": "Email",
+      "name": "Complete name",
+      "username": "Username",
+      "password": "Password",
+      "emailError": "Invalid email",
+      "nameError": "The name should have at least 3 characters and a maximum of 30",
+      "usernameError": "The name should have at least 4 characters and a maximum of 20",
+      "passwordError": "Password should contain at least one uppercase letter, one lowercase letter and one number or special character"
+    }
+  },
+  "auth": {
+    "text-register": "You don't have an account?",
+    "register": "Register",
+    "text-login": "Do you have an account?",
+    "login": "Login",
+    "or": "or"
+  },
+  "UI": {
+    "show": "Show",
+    "hide": "Hide"
+  },
+  "post": {
+    "like": "Like",
+    "likes": "Likes",
+    "comment": {
+      "add": "Add a comment",
+      "post": "Post",
+      "more-comments": "View all {{commentsNumber}} comments"
+    }
+  }
+}

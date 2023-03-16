@@ -1,16 +1,27 @@
-import {Route, Navigate} from 'react-router-dom';
+import { Navigate } from 'react-router-dom'
+import { useAppSelector } from '../hooks/index'
 
+interface Props {
+  Component?: any
+  children?: JSX.Element
+}
 
-const PublicRoute = ({element: Component, isLoggedIn, ...rest} : any) => {
+const PublicRoute = ({ children, Component }: Props) => {
+  const auth = useAppSelector((s) => s.auth.auth)
+
+  if (auth) {
+    return <Navigate to='/' replace />
+  }
+
+  if (Component) {
+    return <Component />
+  }
+
+  if (children) {
+    return children
+  }
   
-  return (
-    <Route 
-      {...rest}
-      element={(props:any) => (
-        !isLoggedIn ? <Component {...props} /> : <Navigate to="/backoffice/admin" />
-      )}
-    />
-  )
+  return <></>
 }
 
 export default PublicRoute

@@ -1,0 +1,54 @@
+{
+  "home": "Bienvenido a Instagram!",
+  "interpolation": "Interpolacion. {{something}}",
+  "login": {
+    "button": "Iniciar sesión",
+    "or": "o",
+    "facebook": "Inicia sesión con Facebook",
+    "password": "¿Has olvidado la contraseña?",
+    "apple-store": "../../appstore-es.png",
+    "playstore": "../../playstore-es.png",
+    "fields": {
+      "username": "Nombre de usuario",
+      "password": "Contraseña",
+      "usernameError": "El nombre de usuario es obligatorio",
+      "passwordError": "La contraseña es obligatorio"
+    },
+    "download-app": "Descarga la aplicación"
+  },
+  "register": {
+    "button": "Registrarte",
+    "subtitle": "Regístrate para ver fotos y vídeos de tus amigos.",
+    "facebook-button": "Iniciar sesión con Facebook",
+    "fields": {
+      "email": "Correo electrónico",
+      "name": "Nombre Completo",
+      "username": "Nombre de usuario",
+      "password": "Contraseña",
+      "emailError": "Email inválido",
+      "nameError": "El nombre debe tener al menos 3 caracteres y un máximo de 40",
+      "usernameError": "El nombre de usuario debe tener al menos 4 caracters y un máximo de 15",
+      "passwordError": "La contraseña debe tener al menos una letra mayúscula y un símbolo especial"
+    }
+  },
+  "auth": {
+    "text-register": "¿No tienes cuenta?",
+    "register": "Regístrate",
+    "text-login": "¿Tienes una cuenta?",
+    "login": "Entrar",
+    "or": "o"
+  },
+  "UI": {
+    "show": "Mostrar",
+    "hide": "Ocultar"
+  },
+  "post": {
+    "like": "Me gusta",
+    "likes": "Me gusta",
+    "comment": {
+      "add": "Añade un comentario",
+      "post": "Publicar",
+      "more-comments": "Ver los {{commentsNumber}} comentarios"
+    }
+  }
+}
