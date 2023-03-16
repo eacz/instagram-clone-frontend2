@@ -1,3 +1,5 @@
+export { default as PostsContainer } from './PostsContainer'
+
 export { default as Post } from './Post'
 
 export { default as PostHeader } from './PostHeader'
