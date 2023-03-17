@@ -1,2 +1,2 @@
-export { default as Storie } from './Storie'
-export { default as StorieContainer } from './StorieContainer'
+export { default as Story } from './Story'
+export { default as StoriesContainer } from './StoriesContainer'

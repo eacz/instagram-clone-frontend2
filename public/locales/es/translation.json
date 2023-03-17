@@ -50,5 +50,8 @@
       "post": "Publicar",
       "more-comments": "Ver los {{commentsNumber}} comentarios"
     }
+  },
+  "stories": {
+    "your-story": "Your Story"
   }
 }

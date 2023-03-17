@@ -49,5 +49,8 @@
       "post": "Post",
       "more-comments": "View all {{commentsNumber}} comments"
     }
+  },
+  "stories": {
+    "your-story": "Your Story"
   }
 }
