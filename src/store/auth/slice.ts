@@ -44,7 +44,7 @@ export const authSlice = createSlice({
       state.error = ''
     })
     builder.addCase(login.rejected, (state, action: PayloadAction<any>) => {
-      state.error = action.payload.message || 'Something went wrong, please try again'
+      state.error = action.payload?.message || 'Something went wrong, please try again'
       state.loading = false
     })
     builder.addCase(login.pending, (state) => {
