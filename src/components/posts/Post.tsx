@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { PostHeader, PostBody, PostFooter } from '.'
+import { IPost } from '../../interfaces'
 
 const PostContainer = styled.article`
   margin-bottom: 0.5rem;
@@ -10,12 +11,14 @@ const PostContainer = styled.article`
   border: 1px solid ${({ theme }) => theme.backgroundContrast};
   border-radius: 8px;
 `
-
-const Post = () => {
+interface Props {
+  post: IPost
+}
+const Post = ({ post }: Props) => {
   return (
     <PostContainer>
-      <PostHeader />
-      <PostBody />
+      <PostHeader profilePicture={post.user.profilePicture} profileName={post.user.username} />
+      <PostBody postPhotos={post.images} description={post.description} likes={post.likes.length} profileName={post.user.username} />
       <PostFooter />
     </PostContainer>
   )

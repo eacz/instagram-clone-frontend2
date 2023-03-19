@@ -17,12 +17,13 @@ const Container = styled.div<Props>`
 interface Props {
   width?: number
   height?: number
+  profilePicture?: string
 }
 
-const ProfilePicture = ({ height = 32, width = 32 }: Props) => {
+const ProfilePicture = ({ height = 32, width = 32, profilePicture }: Props) => {
   return (
     <Container height={height} width={width}>
-      <img src={fakeProfilePicture} alt='xd' />
+      <img src={profilePicture || fakeProfilePicture} alt='xd' />
     </Container>
   )
 }

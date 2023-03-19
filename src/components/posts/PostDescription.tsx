@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Container = styled.section`
@@ -13,11 +14,12 @@ const Container = styled.section`
     margin-right: 0.2rem;
   }
 `
-const likes = 456
-const profileName = 'lighthouse_professional_tattoo'
-const description =
-  'Blossom 🌷By @9rukim He is in Seoul now. Please contact to him directly🖤'
-const PostDescription = () => {
+interface Props {
+  likes: number
+  profileName: string
+  description?: string
+}
+const PostDescription = ({ description, likes, profileName }: Props) => {
   const { t } = useTranslation()
 
   return (
@@ -26,7 +28,7 @@ const PostDescription = () => {
         {likes} {t('post.likes')}
       </a>
       <p className='post-description'>
-        <a href='#'>{profileName}</a>
+        <Link to={`/${profileName}`}>{profileName}</Link> {' '}
         {description}
       </p>
     </Container>

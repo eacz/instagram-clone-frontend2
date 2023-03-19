@@ -2,6 +2,7 @@ import styled, { useTheme } from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons'
 import { ProfilePicture } from '.'
+import { Link } from 'react-router-dom'
 
 const PostHeaderContainer = styled.section`
   display: flex;
@@ -13,22 +14,28 @@ const PostHeaderContainer = styled.section`
   .left-header {
     display: flex;
     align-items: center;
+    text-decoration: none;
   }
   p,
   svg {
     cursor: pointer;
   }
 `
-const profileName = 'lighthouse_professional_tattoo'
-const PostHeader = () => {
+
+interface Props {
+  profileName: string
+  profilePicture: string
+}
+
+const PostHeader = ({ profilePicture, profileName }: Props) => {
   const color = useTheme().type === 'dark' ? 'white' : 'black'
 
   return (
     <PostHeaderContainer>
-      <div className='left-header'>
-        <ProfilePicture />
+      <Link to={`/${profileName}`} className='left-header'>
+        <ProfilePicture profilePicture={profilePicture} />
         <p>{profileName}</p>
-      </div>
+      </Link>
       <FontAwesomeIcon icon={faEllipsis} color={color} />
     </PostHeaderContainer>
   )

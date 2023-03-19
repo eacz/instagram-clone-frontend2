@@ -1,4 +1,3 @@
-import fakePicture from '../../assets/fakePicture.jpg'
 import styled from 'styled-components'
 
 const PostPhotoContainer = styled.div`
@@ -6,11 +5,14 @@ const PostPhotoContainer = styled.div`
     width: 100%;
   }
 `
-
-const PostPhoto = () => {
+interface Props {
+  photo: string
+}
+const PostPhoto = ({photo}: Props) => {
   return (
     <PostPhotoContainer>
-      <img src={fakePicture} alt='fake post pic' />
+      {/* TODO: slider of multiple photos */}
+      <img src={photo} alt='fake post pic' />
     </PostPhotoContainer>
   )
 }

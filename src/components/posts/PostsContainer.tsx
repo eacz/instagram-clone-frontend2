@@ -1,5 +1,4 @@
-import { Post } from '.'
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Container = styled.div`
   margin: 0 30px;
@@ -10,16 +9,11 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 `
-
-const posts = [1, 2, 3, 4, 5, 6, 7, 8]
-const PostsContainer = () => {
-  return (
-    <Container>
-      {posts.map((post) => (
-        <Post key={post} />
-      ))}
-    </Container>
-  )
+interface Props {
+  children?: JSX.Element | JSX.Element[]
+}
+const PostsContainer = ({ children }: Props) => {
+  return <Container>{children}</Container>
 }
 
 export default PostsContainer

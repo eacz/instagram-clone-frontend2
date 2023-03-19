@@ -4,8 +4,8 @@ export interface IPost {
   id: number
   images: string[]
   savedCount: number
-  description: null | string
-  location: null | string
+  description: undefined | string
+  location: undefined | string
   hideLikesAndViews: boolean
   canBeCommented: boolean
   createdAt: string
