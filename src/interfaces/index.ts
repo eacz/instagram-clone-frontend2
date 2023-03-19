@@ -1,8 +1,11 @@
 export * from './stories'
+export * from './posts'
 
 export interface User {
-  name: string
-  id: string
+  id: number
   username: string
+  name: string
   email: string
+  biography: null
+  profilePicture: string
 }
