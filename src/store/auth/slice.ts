@@ -3,6 +3,7 @@ import { authState } from './types'
 import { loginResponse } from '../../interfaces/responses'
 import { deleteItem, deleteHeader } from '../../helpers'
 import { checkToken, login, tokenKeyName } from './actions'
+import { axiosInstance } from '../../shared'
 
 const initialState: authState = {
   auth: false,
@@ -42,6 +43,7 @@ export const authSlice = createSlice({
       state.token = action.payload.token
       state.loading = false
       state.error = ''
+      axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${action.payload.token}`
     })
     builder.addCase(login.rejected, (state, action: PayloadAction<any>) => {
       state.error = action.payload?.message || 'Something went wrong, please try again'
@@ -55,6 +57,7 @@ export const authSlice = createSlice({
       state.checking = false
       state.token = action.payload.token
       state.user = action.payload.user
+      axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${action.payload.token}`
     })
     builder.addCase(checkToken.rejected, (state) => {
       state.checking = false
