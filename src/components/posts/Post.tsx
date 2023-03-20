@@ -7,6 +7,7 @@ const PostContainer = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
   max-width: 470px;
   border: 1px solid ${({ theme }) => theme.backgroundContrast};
   border-radius: 8px;
