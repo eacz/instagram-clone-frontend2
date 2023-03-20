@@ -1,24 +1,31 @@
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
-import { Logo, Menu, SearchBar } from '.'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { Logo, Menu, MenuItem } from '.'
 
-const Container = styled.nav`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  @media screen and (min-width: ${({ theme }) => theme.breakpointMobile}px) {
-    grid-template-columns: 1fr 2fr 1fr;
-  }
-  align-items: center;
+const Container = styled.aside`
+  height: 100vh;
+  max-width: 335px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
-  border-bottom: 1px solid ${({ theme }) => theme.backgroundContrast};
-  margin-bottom: 1rem;
+  margin-left: 40px;
+  position: fixed;
+  z-index: 1;
 `
 
 const Header = () => {
+  const { t } = useTranslation()
+
   return (
     <Container>
-      <Logo />
-      <SearchBar />
-      <Menu />
+      <div>
+        <Logo />
+        <Menu />
+      </div>
+      <MenuItem text={t('navbar.more')} iconInactive={faBars} iconActive={faBars} />
     </Container>
   )
 }

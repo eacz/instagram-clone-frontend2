@@ -53,5 +53,16 @@
   },
   "stories": {
     "your-story": "Your Story"
+  },
+  "navbar": {
+    "home": "Inicio",
+    "search": "Buscar",
+    "explore": "Explorar",
+    "reels": "Reels",
+    "messages": "Mensajes",
+    "notifications": "Notificaciones",
+    "create": "Crear",
+    "profile": "Perfil",
+    "more": "Más"
   }
 }

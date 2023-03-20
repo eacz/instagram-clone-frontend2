@@ -1,35 +1,44 @@
 import styled from 'styled-components'
-import { MenuItem } from '.'
+import { useTranslation } from 'react-i18next'
+
 import {
   faHeart as HeartRegular,
   faCommentDots as CommentRegular,
-  faSquarePlus as SquareRegular,
   faCompass as CompassRegular,
 } from '@fortawesome/free-regular-svg-icons'
 import {
   faHeart as HeartSolid,
   faCommentDots as CommentSolid,
   faHouse as Home,
-  faSquarePlus as SquareSolid,
   faCompass as CompassSolid,
+  faMagnifyingGlass,
+  faFilm,
+  faPlus
 } from '@fortawesome/free-solid-svg-icons'
+
 import { ProfilePicture } from '../posts'
+import { MenuItem } from '.'
 
 const Container = styled.ul`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 !important;
+  padding: 0;
 `
 
 const Menu = () => {
+  const { t } = useTranslation()
   return (
     <Container>
-      <MenuItem iconInactive={Home} iconActive={Home} />
-      <MenuItem iconInactive={CommentRegular} iconActive={CommentSolid} />
-      <MenuItem iconInactive={SquareRegular} iconActive={SquareSolid} />
-      <MenuItem iconInactive={CompassRegular} iconActive={CompassSolid} />
-      <MenuItem iconInactive={HeartRegular} iconActive={HeartSolid} />
-      <ProfilePicture height={20} width={20} />
+      <MenuItem active text={t('navbar.home')} iconInactive={Home} iconActive={Home} />
+      <MenuItem text={t('navbar.search')} iconInactive={faMagnifyingGlass} iconActive={faMagnifyingGlass} />
+      <MenuItem text={t('navbar.explore')} iconInactive={CompassRegular} iconActive={CompassSolid} />
+      <MenuItem text={t('navbar.reels')} iconInactive={faFilm} iconActive={faFilm} />
+      <MenuItem text={t('navbar.messages')} iconInactive={CommentRegular} iconActive={CommentSolid} />
+      <MenuItem text={t('navbar.notifications')} iconInactive={HeartRegular} iconActive={HeartSolid} />
+      <MenuItem text={t('navbar.create')} iconInactive={faPlus} iconActive={faPlus} />
+      <MenuItem text={t('navbar.profile')} iconInactive={HeartRegular} iconActive={HeartSolid} isProfile />
     </Container>
   )
 }
