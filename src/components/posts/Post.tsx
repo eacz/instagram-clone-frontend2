@@ -19,8 +19,13 @@ const Post = ({ post }: Props) => {
   return (
     <PostContainer>
       <PostHeader profilePicture={post.user.profilePicture} profileName={post.user.username} />
-      <PostBody postPhotos={post.images} description={post.description} likes={post.likes.length} profileName={post.user.username} />
-      <PostFooter />
+      <PostBody
+        postPhotos={post.images}
+        description={post.description}
+        likes={post.likes.length}
+        profileName={post.user.username}
+      />
+      <PostFooter createdAt={post.createdAt} />
     </PostContainer>
   )
 }

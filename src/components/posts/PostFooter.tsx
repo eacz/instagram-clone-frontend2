@@ -1,6 +1,10 @@
-import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+
 import { AddComment } from './comments'
+
+dayjs.extend(relativeTime)
 
 const Container = styled.section`
   .main {
@@ -14,19 +18,16 @@ const Container = styled.section`
   }
 `
 
-const PostFooter = () => {
-  const { i18n } = useTranslation()
+interface Props {
+  createdAt: string
+}
 
-  //TODO: replace this with a time library
-  const rtf = new Intl.RelativeTimeFormat(i18n.language, {
-    localeMatcher: 'best fit',
-    numeric: 'always',
-    style: 'long',
-  })
-  return (
+const PostFooter = ({ createdAt }: Props) => {
+  const formattedDate = dayjs(createdAt).fromNow()
+  return(
     <Container>
       <div className='main'>
-        <time>{rtf.format(-1, 'day')}</time>
+        <time>{formattedDate}</time>
       </div>
       <AddComment />
     </Container>

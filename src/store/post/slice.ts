@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { postState } from './types'
-import {} from '../../interfaces/responses'
 import { getFeed } from './actions'
 import { IPost } from '../../interfaces'
 

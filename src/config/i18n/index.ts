@@ -18,20 +18,6 @@ i18n
     interpolation: {
       escapeValue: false,
     },
-    //resources: {
-    //  en: {
-    //    translation: {
-    //      home: 'Welcome to Instagram!',
-    //      interpolation: 'Changed language already {{something}} times'
-    //    }
-    //  },
-    //  es: {
-    //    translation: {
-    //      home: 'Bienvenido a Instagram!',
-    //      interpolation: 'interpolation. {{something}}'
-    //    }
-    //  }
-    //}
   })
 
   export default i18n;

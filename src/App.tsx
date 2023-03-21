@@ -1,5 +1,6 @@
 import { Suspense, useEffect } from 'react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
+
 import { AppRouter } from './routers'
 import { useAppSelector, useAppDispatch } from './hooks/index'
 import { LoadingPage } from './pages'
