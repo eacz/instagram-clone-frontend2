@@ -31,17 +31,17 @@ const Container = styled.div`
   padding: 16px 0;
   overflow: hidden;
   animation: all 0.3s ease;
+  scroll-behavior: smooth;
 `
 interface Props {
   children?: JSX.Element | JSX.Element[]
 }
+
 const StoriesContainer = ({ children }: Props) => {
   const [currentScroll, setCurrentScroll] = useState(0)
   const containerRef = useRef<null | HTMLDivElement>(null)
 
   const handleScroll = (to: 'right' | 'left') => {
-    console.log('handlescroll')
-
     if (to === 'right') {
       containerRef.current?.scroll(currentScroll + 200, 0)
       setCurrentScroll((currentScroll) => currentScroll + 200)

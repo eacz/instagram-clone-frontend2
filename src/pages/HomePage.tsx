@@ -17,6 +17,14 @@ const stories: { id: number; storyType: StoryType }[] = [
   { id: 8, storyType: 'watched' },
   { id: 9, storyType: 'watched' },
   { id: 10, storyType: 'watched' },
+  { id: 11, storyType: 'watched' },
+  { id: 12, storyType: 'watched' },
+  { id: 13, storyType: 'watched' },
+  { id: 14, storyType: 'watched' },
+  { id: 15, storyType: 'watched' },
+  { id: 16, storyType: 'watched' },
+  { id: 17, storyType: 'watched' },
+  { id: 18, storyType: 'watched' },
 ]
 
 const HomePage = () => {
