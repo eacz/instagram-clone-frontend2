@@ -16,7 +16,6 @@ import {
   faPlus
 } from '@fortawesome/free-solid-svg-icons'
 
-import { ProfilePicture } from '../posts'
 import { MenuItem } from '.'
 
 const Container = styled.ul`

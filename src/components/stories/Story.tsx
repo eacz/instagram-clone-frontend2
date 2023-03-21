@@ -6,7 +6,11 @@ import fakeProfilePicture from '../../assets/fakeProfilePicture.jpg'
 import { StoryType } from '../../interfaces'
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
-const Container = styled.div<Props>`
+interface StyleProps {
+  storyType: StoryType
+}
+
+const Container = styled.div<StyleProps>`
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -38,14 +42,16 @@ const Container = styled.div<Props>`
   }
   .user-name {
     cursor: pointer;
+    color: ${p => p.theme.fontColor};
   }
 `
 
 interface Props {
   storyType?: StoryType
+  username: string
 }
 
-const Story = ({ storyType = 'unwatched' }: Props) => {
+const Story = ({ storyType = 'unwatched', username }: Props) => {
   const color = useTheme().type === 'dark' ? 'white' : 'black'
   const { t } = useTranslation()
 
@@ -57,7 +63,7 @@ const Story = ({ storyType = 'unwatched' }: Props) => {
           <FontAwesomeIcon color={color} style={{ padding: '0 8px' }} size='lg' icon={faPlusCircle} />
         )}
       </figure>
-      <span className='user-name'>{storyType === 'new-story' ? t('stories.your-story') : 'username'}</span>
+      <span className='user-name'>{storyType === 'new-story' ? t('stories.your-story') : username}</span>
     </Container>
   )
 }
