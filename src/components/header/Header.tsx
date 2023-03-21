@@ -5,7 +5,7 @@ import { Logo, Menu, MenuItem } from '.'
 
 const Container = styled.aside`
   height: 100vh;
-  max-width: 335px;
+  max-width: calc(100vw - 85vw);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -14,6 +14,7 @@ const Container = styled.aside`
   margin-left: 40px;
   position: fixed;
   z-index: 1;
+  border-right: 1px solid ${p => p.theme.backgroundContrast};
 `
 
 const Header = () => {

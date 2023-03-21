@@ -5,7 +5,7 @@ import { MainLayout } from '../layouts'
 import { getFeed } from '../store/post/actions'
 
 const HomePage = () => {
-  const {feedPosts, loading} = useAppSelector((s) => s.posts)
+  const { feedPosts } = useAppSelector((s) => s.posts)
   const dispatch = useAppDispatch()
 
   useEffect(() => {
