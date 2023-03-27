@@ -30,7 +30,7 @@ const Header = () => {
         <Logo />
         <Menu />
       </div>
-      <MenuItem text={t('navbar.more')} iconInactive={faBars} iconActive={faBars} />
+      <MenuItem itemMenuName='more' text={t('navbar.more')} iconInactive={faBars} iconActive={faBars} />
     </Container>
   )
 }

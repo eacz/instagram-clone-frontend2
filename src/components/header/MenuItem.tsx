@@ -2,6 +2,9 @@ import styled, { useTheme } from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconDefinition } from '@fortawesome/fontawesome-common-types'
 import { ProfilePicture } from '../posts'
+import { useAppSelector, useAppDispatch } from '../../hooks/index'
+import { menuItems } from '../../store/ui/types'
+import { setSidebarItemActive } from '../../store/ui/slice'
 
 const Container = styled.li<StyleProps>`
   width: 100%;
@@ -29,15 +32,23 @@ interface StyleProps {
 interface Props {
   iconActive: IconDefinition
   iconInactive: IconDefinition
+  itemMenuName: menuItems
   text: string
-  active?: boolean
   isProfile?: boolean
 }
 
-const MenuItem = ({ iconActive, iconInactive, active, text, isProfile = false }: Props) => {
+const MenuItem = ({ iconActive, iconInactive, itemMenuName, text, isProfile = false }: Props) => {
   const color = useTheme().type === 'dark' ? 'white' : 'black'
+  const { sidebarItemActive } = useAppSelector((s) => s.ui)
+  const dispatch = useAppDispatch()
+  const active = sidebarItemActive === itemMenuName
+
+  const setMenuItemActive = () => {
+    dispatch(setSidebarItemActive(itemMenuName))
+  }
+
   return (
-    <Container active={active}>
+    <Container active={active} onClick={setMenuItemActive}>
       {isProfile ? (
         <>
           <ProfilePicture width={24} height={24} />

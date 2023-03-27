@@ -12,6 +12,7 @@ export type menuItems =
   | 'notifications'
   | 'create'
   | 'profile'
+  | 'more'
 
 export type themeActions =
   | { type: 'setIsSidebarOpen'; payload: boolean }
