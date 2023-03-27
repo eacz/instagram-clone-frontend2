@@ -5,26 +5,31 @@ import { faCircleChevronLeft, faCircleChevronRight } from '@fortawesome/free-sol
 
 const Wrapper = styled.div`
   position: relative;
-
+  max-height: 120px;
+  height: 100%;
+  /*max-width: 630px;*/
+  max-width: calc(100vw - 50vw);
+  width: 100%;
+  margin-bottom: 2rem;
   .arrow {
     position: absolute;
     cursor: pointer;
   }
   .left-arrow {
     left: 0;
-    top: 30%;
+    top: 40%;
   }
   .right-arrow {
     right: 0;
-    top: 30%;
+    top: 40%;
+  }
+
+  @media screen and (max-width: ${(p) => p.theme.breakpointMobile}px) {
+    max-width: calc(100vw - 23vw);
   }
 `
 
 const Container = styled.div`
-  max-height: 120px;
-  height: 100%;
-  max-width: 630px;
-  width: 100%;
   display: flex;
   border: 1px solid ${({ theme }) => theme.backgroundContrast};
   margin: 16px 0 0;
@@ -63,9 +68,11 @@ const StoriesContainer = ({ children, elements }: Props) => {
           <FontAwesomeIcon color='#ffffff' size='lg' icon={faCircleChevronLeft} />
         </div>
       )}
-      <div className=' right-arrow arrow' onClick={() => handleScroll('right')}>
-        <FontAwesomeIcon color='#ffffff' size='lg' icon={faCircleChevronRight} />
-      </div>
+      {currentScroll !== maximumScrollValue && (
+        <div className=' right-arrow arrow' onClick={() => handleScroll('right')}>
+          <FontAwesomeIcon color='#ffffff' size='lg' icon={faCircleChevronRight} />
+        </div>
+      )}
     </Wrapper>
   )
 }
