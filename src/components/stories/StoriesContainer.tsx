@@ -1,7 +1,7 @@
+import { useMemo, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleChevronLeft, faCircleChevronRight } from '@fortawesome/free-solid-svg-icons'
-import { useRef, useState } from 'react'
 
 const Wrapper = styled.div`
   position: relative;
@@ -35,28 +35,34 @@ const Container = styled.div`
 `
 interface Props {
   children?: JSX.Element | JSX.Element[]
+  elements: number
 }
 
-const StoriesContainer = ({ children }: Props) => {
+const StoriesContainer = ({ children, elements }: Props) => {
   const [currentScroll, setCurrentScroll] = useState(0)
   const containerRef = useRef<null | HTMLDivElement>(null)
+  const maximumScrollValue = useMemo(() => elements * 50, [elements])
 
   const handleScroll = (to: 'right' | 'left') => {
     if (to === 'right') {
-      containerRef.current?.scroll(currentScroll + 200, 0)
-      setCurrentScroll((currentScroll) => currentScroll + 200)
+      const toScroll = currentScroll + 200 > maximumScrollValue ? maximumScrollValue : currentScroll + 200
+      containerRef.current?.scroll(toScroll, 0)
+      setCurrentScroll(toScroll)
     } else {
-      containerRef.current?.scroll(currentScroll - 200, 0)
-      setCurrentScroll((currentScroll) => currentScroll - 200)
+      const toScroll = currentScroll - 200 < 0 ? 0 : currentScroll - 200
+      containerRef.current?.scroll(toScroll, 0)
+      setCurrentScroll(toScroll)
     }
   }
 
   return (
     <Wrapper>
       <Container ref={containerRef}>{children}</Container>
-      <div className=' left-arrow arrow' onClick={() => handleScroll('left')}>
-        <FontAwesomeIcon color='#ffffff' size='lg' icon={faCircleChevronLeft} />
-      </div>
+      {currentScroll !== 0 && (
+        <div className=' left-arrow arrow' onClick={() => handleScroll('left')}>
+          <FontAwesomeIcon color='#ffffff' size='lg' icon={faCircleChevronLeft} />
+        </div>
+      )}
       <div className=' right-arrow arrow' onClick={() => handleScroll('right')}>
         <FontAwesomeIcon color='#ffffff' size='lg' icon={faCircleChevronRight} />
       </div>

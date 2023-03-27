@@ -39,7 +39,7 @@ const HomePage = () => {
 
   return (
     <MainLayout>
-      <StoriesContainer>
+      <StoriesContainer elements={stories.length}>
         {stories.map((story) => (
           <Story key={story.id} storyType={story.storyType} username={`username ${story.id}`}/>
         ))}
