@@ -11,8 +11,15 @@ const Container = styled.li<StyleProps>`
   gap: 1rem;
   margin: 0;
   cursor: pointer;
+  @media screen and (max-width: 1000px) {
+    margin-bottom: 1rem;
+  }
   .item-menu {
     font-weight: ${(p) => (p.active ? '700' : '400')};
+    @media screen and (max-width: 1000px) {
+      display: none;
+      margin-bottom: 1rem;
+    }
   }
 `
 interface StyleProps {
@@ -33,7 +40,7 @@ const MenuItem = ({ iconActive, iconInactive, active, text, isProfile = false }:
     <Container active={active}>
       {isProfile ? (
         <>
-          <ProfilePicture width={17} height={17} />
+          <ProfilePicture width={24} height={24} />
           <p className='item-menu'>{text}</p>
         </>
       ) : (
@@ -41,7 +48,7 @@ const MenuItem = ({ iconActive, iconInactive, active, text, isProfile = false }:
           {active ? (
             <FontAwesomeIcon height={24} width={24} size='lg' color={color} icon={iconActive} />
           ) : (
-            <FontAwesomeIcon height={24} width={24}  size='lg' color={color} icon={iconInactive} />
+            <FontAwesomeIcon height={24} width={24} size='lg' color={color} icon={iconInactive} />
           )}
           <p className='item-menu'>{text}</p>
         </>

@@ -14,7 +14,11 @@ const Container = styled.aside`
   margin-left: 40px;
   position: fixed;
   z-index: 1;
-  border-right: 1px solid ${p => p.theme.backgroundContrast};
+  border-right: 1px solid ${(p) => p.theme.backgroundContrast};
+  @media screen and (max-width: 1000px) {
+    max-width: 40px;
+    margin-left: 10px;
+  }
 `
 
 const Header = () => {

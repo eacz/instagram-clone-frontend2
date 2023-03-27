@@ -24,6 +24,9 @@ const Container = styled.ul`
   align-items: flex-start;
   margin: 0 !important;
   padding: 0;
+  @media screen and (max-width: 1000px) {
+    gap: .5rem;
+  }
 `
 
 const Menu = () => {

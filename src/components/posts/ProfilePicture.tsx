@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import fakeProfilePicture from '../../assets/fakeProfilePicture.jpg'
 
 const Container = styled.div<Props>`
-  margin-right: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;

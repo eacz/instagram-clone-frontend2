@@ -15,6 +15,7 @@ const PostHeaderContainer = styled.section`
     display: flex;
     align-items: center;
     text-decoration: none;
+    gap: .5rem;
   }
   p,
   svg {
