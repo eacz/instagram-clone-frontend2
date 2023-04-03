@@ -64,5 +64,8 @@
     "create": "Crear",
     "profile": "Perfil",
     "more": "Más"
+  },
+  "footer": {
+    "change": "Cambiar"
   }
 }
