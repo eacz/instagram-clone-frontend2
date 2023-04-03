@@ -1,19 +1,25 @@
 import styled from 'styled-components'
 import { ProfilePicture } from '../posts'
 import { useTranslation } from 'react-i18next'
+import { TextButton } from '../common'
 
 const Container = styled.section`
-  
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
-  border: 1px solid ${p => p.theme.backgroundContrast};
   border-radius: 8px;
   padding: 5px 0;
-  .profile-name {
+  .profile {
     p {
+      color: ${(p) => p.theme.fontColor};
       margin: 0;
+    }
+    .username {
+      font-weight: 700;
+    }
+    .name {
+      font-weight: 200;
     }
   }
   .change-link {
@@ -23,22 +29,26 @@ const Container = styled.section`
   }
 `
 
-const name = 'Esteban Canteros'
-const username = 'eacz'
+interface Props {
+  isUser?: boolean
+  name: string
+  username: string
+}
 
-const ProfileResumeHome = () => {
+const ProfileResumeHome = ({ isUser = false, name, username }: Props) => {
   const { t } = useTranslation()
+  const profilePictureSize = isUser ? 56 : 32
   return (
     <Container>
-      <ProfilePicture width={56} height={56} />
-      <div className='profile-name'>
-        <p>{username}</p>
-        <p>{name}</p>
+      <ProfilePicture width={profilePictureSize} height={profilePictureSize} />
+      <div className='profile'>
+        <p className='username'>{username}</p>
+        <p className='name'>{name}</p>
       </div>
-      {/*eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
-      <a href='#' className='change-link'>
-        {t('footer.change')}
-      </a>
+      <TextButton changeColorOnHover={!isUser}>
+        {' '}
+        {isUser ? t('footer.change') : t('footer.follow')}
+      </TextButton>
     </Container>
   )
 }
