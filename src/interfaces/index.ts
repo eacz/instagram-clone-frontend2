@@ -9,3 +9,8 @@ export interface User {
   biography: null
   profilePicture: string
 }
+
+export interface ILink {
+  text: string 
+  to?: string 
+}

@@ -66,6 +66,9 @@
     "more": "Más"
   },
   "footer": {
-    "change": "Cambiar"
+    "change": "Cambiar",
+    "follow": "Seguir",
+    "suggestions": "Sugerencias para ti",
+    "see-all": "Ver todo"
   }
 }

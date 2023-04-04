@@ -65,6 +65,21 @@
     "more": "More"
   },
   "footer": {
-    "change": "Change"
+    "change": "Change",
+    "follow": "Follow",
+    "suggestions": "Suggestions for you",
+    "see-all": "See all",
+    
+    "about": "About",
+    "help": "Help",
+    "press": "Press",
+    "api": "API",
+    "jobs": "Jobs",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "locations": "Locations",
+    "language": "Language",
+    "meta": "Meta Verified",
+    "copy": "© 2023 INSTAGRAM FROM META"
   }
 }
