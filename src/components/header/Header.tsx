@@ -5,13 +5,13 @@ import { Logo, Menu, MenuItem } from '.'
 
 const Container = styled.aside`
   height: 100vh;
-  max-width: calc(100vw - 85vw);
+  max-width: 15vw;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  margin-left: 40px;
+  margin-left: 1vw;
   position: fixed;
   z-index: 1;
   border-right: 1px solid ${(p) => p.theme.backgroundContrast};
