@@ -1,4 +1,6 @@
 import { useEffect } from 'react'
+import styled from 'styled-components'
+
 import { Post, PostsContainer } from '../components/posts'
 import { StoriesContainer, Story } from '../components/stories'
 import { useAppSelector, useAppDispatch } from '../hooks'
@@ -27,6 +29,13 @@ const stories: { id: number; storyType: StoryType }[] = [
   { id: 18, storyType: 'watched' },
 ]
 
+const Container = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
 const HomePage = () => {
   const { feedPosts } = useAppSelector((s) => s.posts)
   const dispatch = useAppDispatch()
@@ -39,16 +48,18 @@ const HomePage = () => {
 
   return (
     <MainLayout>
-      <StoriesContainer elements={stories.length}>
-        {stories.map((story) => (
-          <Story key={story.id} storyType={story.storyType} username={`username ${story.id}`}/>
-        ))}
-      </StoriesContainer>
-      <PostsContainer>
-        {feedPosts.map((post) => (
-          <Post post={post} key={post.id} />
-        ))}
-      </PostsContainer>
+      <Container>
+        <StoriesContainer elements={stories.length}>
+          {stories.map((story) => (
+            <Story key={story.id} storyType={story.storyType} username={`username ${story.id}`} />
+          ))}
+        </StoriesContainer>
+        <PostsContainer>
+          {feedPosts.map((post) => (
+            <Post post={post} key={post.id} />
+          ))}
+        </PostsContainer>
+      </Container>
     </MainLayout>
   )
 }

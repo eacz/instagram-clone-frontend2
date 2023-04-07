@@ -23,9 +23,9 @@ const Container = styled.main`
       display: none;
     }
     .content {
-      margin-left: 50px;
+      margin-left: 56px;
       /*margin-left: 0;s*/
-      width: calc(100vw - 50px);
+      width: calc(100vw - 56px);
     }
   }
 `

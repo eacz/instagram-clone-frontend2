@@ -14,6 +14,7 @@ const Container = styled.div`
   }
 
   svg {
+    font-size: 1.7em;
     @media screen and (min-width: 1000px) {
       display: none;
     }
@@ -27,7 +28,7 @@ const Logo = () => {
   return (
     <Container>
       <h1>Instagram</h1>
-      <FontAwesomeIcon size='2x' icon={faInstagram as IconProp} />
+      <FontAwesomeIcon height={24} width={24} size='lg' icon={faInstagram as IconProp} />
     </Container>
   )
 }

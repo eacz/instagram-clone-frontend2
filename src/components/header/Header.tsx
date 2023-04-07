@@ -17,7 +17,7 @@ const Container = styled.aside`
   border-right: 1px solid ${(p) => p.theme.backgroundContrast};
   @media screen and (max-width: 1000px) {
     max-width: 40px;
-    margin-left: 10px;
+    margin-left: 15px;
   }
 `
 

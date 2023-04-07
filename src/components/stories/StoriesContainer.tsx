@@ -8,20 +8,20 @@ const Wrapper = styled.div`
   max-height: 120px;
   height: 100%;
   /*max-width: 630px;*/
-  max-width: calc(100vw - 50vw);
+  max-width: calc(100vw - 45vw);
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   .arrow {
     position: absolute;
     cursor: pointer;
   }
   .left-arrow {
     left: 0;
-    top: 40%;
+    top: 50%;
   }
   .right-arrow {
     right: 0;
-    top: 40%;
+    top: 50%;
   }
 
   @media screen and (max-width: ${(p) => p.theme.breakpointMobile}px) {
@@ -31,7 +31,7 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   display: flex;
-  border: 1px solid ${({ theme }) => theme.backgroundContrast};
+  /*border: 1px solid ${({ theme }) => theme.backgroundContrast};*/
   margin: 16px 0 0;
   padding: 16px 0;
   overflow: hidden;
