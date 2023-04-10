@@ -1,10 +1,8 @@
 import styled from 'styled-components'
-import dayjs from 'dayjs'
-import relativeTime from 'dayjs/plugin/relativeTime'
 
 import { AddComment } from './comments'
+import { time } from '../../utils'
 
-dayjs.extend(relativeTime)
 
 const Container = styled.section`
   .main {
@@ -23,7 +21,7 @@ interface Props {
 }
 
 const PostFooter = ({ createdAt }: Props) => {
-  const formattedDate = dayjs(createdAt).fromNow()
+  const formattedDate = time.getRelativeTime(createdAt)
   return(
     <Container>
       <div className='main'>

@@ -69,6 +69,18 @@
     "change": "Cambiar",
     "follow": "Seguir",
     "suggestions": "Sugerencias para ti",
-    "see-all": "Ver todo"
+    "see-all": "Ver todo",
+
+    "about": "Información",
+    "help": "Ayuda",
+    "press": "Prensa",
+    "api": "API",
+    "jobs": "Empleo",
+    "privacy": "Privacidad",
+    "terms": "Condiciones",
+    "locations": "Ubicaciones",
+    "language": "Idioma",
+    "meta": "Meta Verified",
+    "copy": "© 2023 INSTAGRAM FROM META"
   }
 }
