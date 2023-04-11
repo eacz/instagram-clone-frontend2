@@ -1,11 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-//import { faHeart } from '@fortawesome/free-solid-svg-icons' this heart is filled
-import {
-  faHeart,
-  faComment,
-  faPaperPlane,
-  faBookmark,
-} from '@fortawesome/free-regular-svg-icons'
+import { faHeart, faComment, faPaperPlane, faBookmark } from '@fortawesome/free-regular-svg-icons'
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons'
 import styled, { useTheme } from 'styled-components'
 const Container = styled.section`
   display: flex;
@@ -17,37 +12,27 @@ const Container = styled.section`
   }
 `
 
-const PostActions = () => {
+interface Props {
+  id: number
+  isLiked: boolean
+}
+
+const PostActions = ({ id, isLiked }: Props) => {
   const color = useTheme().type === 'dark' ? 'white' : 'black'
+
   return (
     <Container>
       <div>
         {/* TODO: makes post's icons a generic component, cuz al of them share the same styles */}
-        <FontAwesomeIcon
-          color={color}
-          style={{ padding: '0 8px 0 0' }}
-          size='lg'
-          icon={faHeart}
-        />
-        <FontAwesomeIcon
-          color={color}
-          style={{ padding: '0 8px' }}
-          size='lg'
-          icon={faComment}
-        />
-        <FontAwesomeIcon
-          color={color}
-          style={{ padding: '0 8px' }}
-          size='lg'
-          icon={faPaperPlane}
-        />
+        {isLiked ? (
+          <FontAwesomeIcon color='red' style={{ padding: '0 8px 0 0' }} size='lg' icon={solidHeart} />
+        ) : (
+          <FontAwesomeIcon color={color} style={{ padding: '0 8px 0 0' }} size='lg' icon={faHeart} />
+        )}
+        <FontAwesomeIcon color={color} style={{ padding: '0 8px' }} size='lg' icon={faComment} />
+        <FontAwesomeIcon color={color} style={{ padding: '0 8px' }} size='lg' icon={faPaperPlane} />
       </div>
-      <FontAwesomeIcon
-        color={color}
-        style={{ padding: '0 8px' }}
-        size='lg'
-        icon={faBookmark}
-      />
+      <FontAwesomeIcon color={color} style={{ padding: '0 8px' }} size='lg' icon={faBookmark} />
     </Container>
   )
 }
