@@ -38,11 +38,13 @@ export const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(login.fulfilled, (state, action: PayloadAction<loginResponse>) => {
+      
       state.auth = true
       state.user = action.payload.user
       state.token = action.payload.token
       state.loading = false
       state.error = ''
+      state.user = action.payload.user
       axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${action.payload.token}`
     })
     builder.addCase(login.rejected, (state, action: PayloadAction<any>) => {

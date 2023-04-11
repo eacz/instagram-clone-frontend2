@@ -48,17 +48,18 @@ const Container = styled.div<StyleProps>`
 
 interface Props {
   storyType?: StoryType
-  username: string
+  username: string,
+  photo?: string
 }
 
-const Story = ({ storyType = 'unwatched', username }: Props) => {
+const Story = ({ storyType = 'unwatched', username, photo }: Props) => {
   const color = useTheme().type === 'dark' ? 'white' : 'black'
   const { t } = useTranslation()
 
   return (
     <Container storyType={storyType}>
       <figure className='image-container'>
-        <img src={fakeProfilePicture} alt='user-profile' className='image' />
+        <img src={photo || fakeProfilePicture } alt='user-profile' className='image' />
         {storyType === 'new-story' && (
           <FontAwesomeIcon color={color} style={{ padding: '0 8px' }} size='lg' icon={faPlusCircle} />
         )}

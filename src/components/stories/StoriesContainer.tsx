@@ -2,6 +2,8 @@ import { useMemo, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleChevronLeft, faCircleChevronRight } from '@fortawesome/free-solid-svg-icons'
+import Story from './Story'
+import { useAppSelector } from '../../hooks'
 
 const Wrapper = styled.div`
   position: relative;
@@ -60,9 +62,15 @@ const StoriesContainer = ({ children, elements }: Props) => {
     }
   }
 
+  const user = useAppSelector(state => state.auth.user)
+
   return (
     <Wrapper>
-      <Container ref={containerRef}>{children}</Container>
+      <Container ref={containerRef}>
+        {/*  User's new store option */}
+      <Story photo={user?.profilePicture} username={user?.username || ''} storyType='new-story'  />
+        {children}
+      </Container>
       {currentScroll !== 0 && (
         <div className=' left-arrow arrow' onClick={() => handleScroll('left')}>
           <FontAwesomeIcon color='#ffffff' size='lg' icon={faCircleChevronLeft} />

@@ -9,7 +9,6 @@ import { MainLayout } from '../layouts'
 import { getFeed } from '../store/post/actions'
 
 const stories: { id: number; storyType: StoryType }[] = [
-  { id: 1, storyType: 'new-story' },
   { id: 2, storyType: 'unwatched' },
   { id: 3, storyType: 'unwatched' },
   { id: 4, storyType: 'unwatched' },

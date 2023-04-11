@@ -33,14 +33,15 @@ interface Props {
   isUser?: boolean
   name: string
   username: string
+  photo?: string
 }
 
-const ProfileResumeHome = ({ isUser = false, name, username }: Props) => {
+const ProfileResumeHome = ({ isUser = false, name, username, photo }: Props) => {
   const { t } = useTranslation()
   const profilePictureSize = isUser ? 56 : 32
   return (
     <Container>
-      <ProfilePicture width={profilePictureSize} height={profilePictureSize} />
+      <ProfilePicture profilePicture={photo} width={profilePictureSize} height={profilePictureSize} />
       <div className='profile'>
         <p className='username'>{username}</p>
         <p className='name'>{name}</p>
